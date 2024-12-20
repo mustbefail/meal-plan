@@ -1,8 +1,88 @@
-# React + Vite
+# Meal Plan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application built using modern tools like React and Vite. It includes configurations for linting, commit validation, and development utilities.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Installation](#installation)
+- [Scripts](#scripts)
+- [Dependencies](#dependencies)
+- [DevDependencies](#devdependencies)
+- [Linting and Pre-commit Hooks](#linting-and-pre-commit-hooks)
+- [Development](#development)
+- [Contributing](#contributing)
+
+## Features
+
+- **React**: Built with React 18 for dynamic user interfaces.
+- **Vite**: Fast and efficient bundling and development server.
+- **ESLint**: Ensures consistent and error-free code.
+- **Husky & Lint-staged**: Streamlined Git workflows with pre-commit hooks.
+- **TypeScript Support**: Includes type definitions for React and DOM.
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone <repository-url>
+cd meal-plan
+npm install
+```
+
+## Scripts
+
+The following scripts are available:
+
+- **npm run dev**: Starts the development server.
+- **npm run build**: Builds the application for production.
+- **npm run preview**: Previews the production build.
+- **npm run lint**: Runs ESLint to check code quality.
+- **npm run prepare**: Sets up Husky for Git hooks.
+
+
+The project is configured with ESLint and Husky to enforce code quality. Pre-commit hooks run linting on staged files using lint-staged.
+
+* **fix**: For bug fixes
+* **feat**: For new features
+* **refactor**: For restructuring the code without adding features or fixing bugs
+* **build**: For changes in the build system or dependencies
+* **ci**: For changes in the CI/CD configuration
+* **docs**: For changes in the documentation only
+* **perf**: For performance optimizations
+* **style**: For fixing code formatting
+* **test**: For adding or adjusting tests
+
+## Configurations
+* **ESLint:** Located in .eslintrc.json.
+* **Husky:** Automatically configured by prepare script.
+* **Lint-staged:** Runs ESLint fixes on staged files.
+* 
+## Development
+
+Start the development server:
+```bash
+Копировать код
+npm run dev
+```
+
+Build the project for production:
+```bash
+Копировать код
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Contributing
+
+* Fork the repository.
+* Create a new branch (git checkout -b feature-branch).
+* Commit your changes (git commit -m "Add new feature").
+* Push the branch (git push origin feature-branch).
+* Open a pull request.
