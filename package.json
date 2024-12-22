@@ -15,15 +15,5 @@
     "@commitlint/config-conventional": "^19.6.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11"
-  },
-  "lint-staged": {
-    "client/**/*.{js,jsx,ts,tsx}": [
-      "cd client && npm run lint",
-      "cd client && npm run format"
-    ],
-    "server/**/*.{js,jsx,ts,tsx}": [
-      "cd server && npm run lint",
-      "cd server && npm run format"
-    ]
   }
 }
