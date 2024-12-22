@@ -17,11 +17,11 @@
     "lint-staged": "^15.2.11"
   },
   "lint-staged": {
-    "./client/**/*.{js,jsx,ts,tsx}": [
+    "client/**/*.{js,jsx,ts,tsx}": [
       "cd client && npm run lint",
       "cd client && npm run format"
     ],
-    "./server/**/*.{js,jsx,ts,tsx}": [
+    "server/**/*.{js,jsx,ts,tsx}": [
       "cd server && npm run lint",
       "cd server && npm run format"
     ]

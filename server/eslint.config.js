@@ -3,7 +3,7 @@ import globals from 'globals'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default [
-  { ignores: ['dist'] },
+  { ignores: ['dist', ''] },
   prettierRecommended,
   {
     files: ['**/*.{js,jsx}'],
