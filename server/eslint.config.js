@@ -11,7 +11,8 @@ export default [
       ecmaVersion: 2020,
       globals: {
         ...globals.node,
-        ...globals.es2025
+        ...globals.es2025,
+        ...globals.jest
       },
       parserOptions: {
         ecmaVersion: 'latest',
