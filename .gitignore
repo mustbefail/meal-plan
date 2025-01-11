@@ -26,4 +26,6 @@ plan.md
 **/dist
 **/dist-ssr
 **/.env
+**/.env.local
 
+*storybook.log
