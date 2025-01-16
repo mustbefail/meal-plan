@@ -1,8 +1,16 @@
-import PropTypes from 'prop-types'
+import { ChangeEventHandler } from 'react'
 
-export default function PostSorting({ sortByFields, sortBy, setSortBy, sortOrder, setSortOrder }) {
-  const sortByHandler = (event) => setSortBy(event.target.value)
-  const sortOrderHandler = (event) => setSortOrder(event.target.value)
+interface PostSortingProps {
+  sortByFields: string[]
+  sortBy: string
+  setSortBy: (sortBy: string) => void
+  sortOrder: string
+  setSortOrder: (sortOrder: string) => void
+}
+
+export default function PostSorting({ sortByFields, sortBy, setSortBy, sortOrder, setSortOrder }: PostSortingProps) {
+  const sortByHandler: ChangeEventHandler<HTMLSelectElement> = (event) => setSortBy(event.target.value)
+  const sortOrderHandler: ChangeEventHandler<HTMLSelectElement> = (event) => setSortOrder(event.target.value)
   return (
     <div>
       <label htmlFor="sortBy">Sort By:</label>
@@ -21,12 +29,4 @@ export default function PostSorting({ sortByFields, sortBy, setSortBy, sortOrder
       </select>
     </div>
   )
-}
-
-PostSorting.propTypes = {
-  sortByFields: PropTypes.arrayOf(PropTypes.string).isRequired,
-  sortBy: PropTypes.string.isRequired,
-  setSortBy: PropTypes.func.isRequired,
-  sortOrder: PropTypes.string.isRequired,
-  setSortOrder: PropTypes.func.isRequired
 }

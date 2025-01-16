@@ -1,24 +1,16 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { createPost } from '../api/posts.js'
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
+import useCreatePost from '@/components/posts/hooks/useCreatePost.ts'
 
 export function CreatePost() {
   const [author, setAuthor] = useState('')
   const [title, setTitle] = useState('')
   const [contents, setContents] = useState('')
-  const queryClient = useQueryClient()
+  const { createPost, isPending, isError, isSuccess } = useCreatePost()
 
-  const { mutateAsync, isPending, isSuccess } = useMutation({
-    mutationFn: ({ author, title, contents }) => createPost({ author, title, contents }),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['posts'] }).catch((err) => console.error(err))
-    }
-  })
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
 
-    await mutateAsync({ author, title, contents }).catch((err) => console.error(err))
+    await createPost({ author, title, contents }).catch((err) => console.error(err))
 
     setAuthor('')
     setTitle('')
@@ -56,6 +48,12 @@ export function CreatePost() {
         <>
           <br />
           Post created successfully!
+        </>
+      ) : null}
+      {isError ? (
+        <>
+          <br />
+          Error creating post!
         </>
       ) : null}
     </form>

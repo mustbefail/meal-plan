@@ -2,15 +2,13 @@ import { CreatePost } from './components/CreatePost.jsx'
 import PostList from './components/PostList.jsx'
 import PostFilter from './components/PostFilter.jsx'
 import PostSorting from './components/PostSorting.jsx'
-import { useQuery } from '@tanstack/react-query'
-import { getPosts } from './api/posts.js'
-import { useState } from 'react'
+import { CSSProperties, useState } from 'react'
 import useDebounce from './hooks/useDebounce.js'
 
-const containerStyles = {
+const containerStyles: CSSProperties = {
   display: 'flex',
-  flexDirection: 'column',
   alignItems: 'center',
+  flexDirection: 'column',
   justifyContent: 'center',
   margin: '0 auto',
   width: '50%',
@@ -19,16 +17,9 @@ const containerStyles = {
 
 export default function Blog() {
   const [author, setAuthor] = useState('')
+  const debAuthor = useDebounce(author, 500)
   const [sortBy, setSortBy] = useState('createdAt')
   const [sortOrder, setSortOrder] = useState('descending')
-
-  const debAuthor = useDebounce(author, 500)
-
-  const postsQuery = useQuery({
-    queryKey: ['posts', { author: debAuthor, sortBy, sortOrder }],
-    queryFn: () => getPosts({ author: debAuthor, sortBy, sortOrder })
-  })
-  const posts = postsQuery.data ?? []
 
   return (
     <div style={containerStyles}>
@@ -47,7 +38,7 @@ export default function Blog() {
         setSortOrder={setSortOrder}
       />
       <hr />
-      <PostList posts={posts} />
+      <PostList filters={{ author: debAuthor as string, sortBy, sortOrder }} />
       <br />
     </div>
   )
