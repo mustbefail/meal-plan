@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react'
-import useCreatePost from '@/components/posts/hooks/useCreatePost.ts'
+import useCreatePost from '@/components/blog/posts/hooks/useCreatePost.ts'
 
-export function CreatePost() {
+export default function CreatePost() {
   const [author, setAuthor] = useState('')
   const [title, setTitle] = useState('')
   const [contents, setContents] = useState('')

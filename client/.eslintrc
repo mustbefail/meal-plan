@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "next",
+    "prettier",
+    "plugin:@tanstack/query/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "always",
+        "printWidth": 120,
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "none"
+      }
+    ]
+  },
+  "root": true
+}

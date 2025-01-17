@@ -1,6 +1,6 @@
-import Post from './Post.jsx'
+import Post from './Post'
 import { Fragment } from 'react'
-import usePosts from './posts/hooks/usePosts.ts'
+import usePosts from '@/components/blog/posts/hooks/usePosts.ts'
 
 interface PostListProps {
   filters: {

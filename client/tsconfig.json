@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
-
     /* Projects */
-    // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
+    "incremental": true,
+    /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
     // "composite": true,                                /* Enable constraints that allow a TypeScript project to be used with project references. */
     // "tsBuildInfoFile": "./.tsbuildinfo",              /* Specify the path to .tsbuildinfo incremental compilation file. */
     // "disableSourceOfProjectReferenceRedirect": true,  /* Disable preferring source files instead of declaration files when referencing composite projects. */
     // "disableSolutionSearching": true,                 /* Opt a project out of multi-project reference checking when editing. */
     // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
-
     /* Language and Environment */
     "target": "es2022",
     /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
@@ -18,7 +17,12 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "jsx": "preserve",
     /* Specify what JSX code is generated. */
     // "experimentalDecorators": true,                   /* Enable experimental support for legacy experimental decorators. */
     // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
@@ -34,20 +38,30 @@
     /* Modules */
     "module": "ESNext",
     /* Specify what module code is generated. */
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
+    "rootDir": "./",
+    /* Specify the root folder within your source files. */
     "moduleResolution": "bundler",
     "baseUrl": "./",
     /* Specify the base directory to resolve non-relative module names. */
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@/styles/*": [
+        "src/styles/*"
+      ],
+      "@/i18n/*": [
+        "src/i18n/*"
       ]
     },
     /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
     "types": [
-      "vite/client"
+      "node",
+      "react",
+      "react-dom",
+      "next",
     ],
     /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
@@ -62,12 +76,11 @@
     // "resolveJsonModule": true,                        /* Enable importing .json files. */
     // "allowArbitraryExtensions": true,                 /* Enable importing files with any extension, provided a declaration file is present. */
     // "noResolve": true,                                /* Disallow 'import's, 'require's or '<reference>'s from expanding the number of files TypeScript should add to a project. */
-
     /* JavaScript Support */
-    // "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+    "allowJs": true,
+    /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
     // "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
     // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from 'node_modules'. Only applicable with 'allowJs'. */
-
     /* Emit */
     // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
@@ -91,7 +104,6 @@
     // "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
     // "preserveConstEnums": true,                       /* Disable erasing 'const enum' declarations in generated code. */
     // "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
-
     /* Interop Constraints */
     "isolatedModules": true,
     /* Ensure that each file can be safely transpiled without relying on other imports. */
@@ -103,7 +115,6 @@
     // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
     "forceConsistentCasingInFileNames": true,
     /* Ensure that casing is correct in imports. */
-
     /* Type Checking */
     "strict": true,
     /* Enable all strict type-checking options. */
@@ -132,13 +143,20 @@
     // "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type. */
     // "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
     // "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
-
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true
-    /* Skip type checking all .d.ts files. */
+    /* Skip type checking all .d.ts files. */,
+    "resolveJsonModule": true
   },
   "include": [
-    "src"
+    "src",
+    "./dist/types/**/*.ts",
+    "./next-env.d.ts",
+    "./css.d.ts",
+    "types-shared.d.ts"
+  ],
+  "exclude": [
+    "./node_modules"
   ]
 }

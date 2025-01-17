@@ -1,4 +1,4 @@
-import useGetPost from '../../../api/posts/useGetPost.ts'
+import useGetPost from '../../../../api/posts/useGetPost.ts'
 
 export interface GetPostsQueryParams extends Record<string, string> {
   author: string

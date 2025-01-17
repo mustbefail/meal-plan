@@ -1,9 +1,9 @@
-import { CreatePost } from './components/CreatePost.jsx'
-import PostList from './components/PostList.jsx'
-import PostFilter from './components/PostFilter.jsx'
-import PostSorting from './components/PostSorting.jsx'
+import CreatePost from './posts/CreatePost'
+import PostList from './posts/PostList'
+import PostFilter from './posts/PostFilter'
+import PostSorting from './posts/PostSorting'
 import { CSSProperties, useState } from 'react'
-import useDebounce from './hooks/useDebounce.js'
+import useDebounce from '../../hooks/useDebounce'
 
 const containerStyles: CSSProperties = {
   display: 'flex',

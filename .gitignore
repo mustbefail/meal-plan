@@ -30,3 +30,7 @@ plan.md
 
 *storybook.log
 client/src/stories
+# ...
+.next
+next-env.d.ts
+dist

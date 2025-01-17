@@ -1,6 +1,7 @@
 # Meal Plan
 
-This project is a web application built using modern tools like React and Vite. It includes configurations for linting, commit validation, and development utilities.
+This project is a web application built using modern tools like React and Vite. It includes configurations for linting,
+commit validation, and development utilities.
 
 ## Table of Contents
 
@@ -15,8 +16,7 @@ This project is a web application built using modern tools like React and Vite. 
 
 ## Features
 
-- **React**: Built with React 18 for dynamic user interfaces.
-- **Vite**: Fast and efficient bundling and development server.
+- **Next js**: A React framework for building server-rendered applications.
 - **ESLint**: Ensures consistent and error-free code.
 - **Husky & Lint-staged**: Streamlined Git workflows with pre-commit hooks.
 - **TypeScript Support**: Includes type definitions for React and DOM.
@@ -37,12 +37,12 @@ The following scripts are available:
 
 - **npm run dev**: Starts the development server.
 - **npm run build**: Builds the application for production.
-- **npm run preview**: Previews the production build.
+- **npm run start**: Previews the production build.
 - **npm run lint**: Runs ESLint to check code quality.
 - **npm run prepare**: Sets up Husky for Git hooks.
 
-
-The project is configured with ESLint and Husky to enforce code quality. Pre-commit hooks run linting on staged files using lint-staged.
+The project is configured with ESLint and Husky to enforce code quality. Pre-commit hooks run linting on staged files
+using lint-staged.
 
 * **fix**: For bug fixes
 * **feat**: For new features
@@ -55,19 +55,23 @@ The project is configured with ESLint and Husky to enforce code quality. Pre-com
 * **test**: For adding or adjusting tests
 
 ## Configurations
+
 * **ESLint:** Located in .eslintrc.json.
 * **Husky:** Automatically configured by prepare script.
 * **Lint-staged:** Runs ESLint fixes on staged files.
-* 
+*
+
 ## Development
 
 Start the development server:
+
 ```bash
 Копировать код
 npm run dev
 ```
 
 Build the project for production:
+
 ```bash
 Копировать код
 npm run build
@@ -76,7 +80,7 @@ npm run build
 Preview the production build locally:
 
 ```bash
-npm run preview
+npm run start
 ```
 
 ## Contributing
