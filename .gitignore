@@ -34,3 +34,5 @@ client/src/stories
 .next
 next-env.d.ts
 dist
+
+book.md
