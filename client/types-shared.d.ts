@@ -1,4 +1,4 @@
-import type { useRouter } from './src/i18n/routing'
+import type { useRouter } from '@/i18n/routing.ts'
 
 declare module '@react-types/shared' {
   interface RouterConfig {

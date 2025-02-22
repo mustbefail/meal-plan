@@ -52,7 +52,19 @@
       ],
       "@/i18n/*": [
         "src/i18n/*"
-      ]
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/hooks/*": [
+        "src/hooks/*"
+      ],
+      "@/api/*": [
+        "src/api/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
+      ],
     },
     /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
@@ -61,7 +73,7 @@
       "node",
       "react",
       "react-dom",
-      "next",
+      "next"
     ],
     /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */

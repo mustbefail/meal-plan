@@ -13,9 +13,14 @@ export const routing = defineRouting({
     '/blog': {
       en: '/blog',
       fr: '/blogue'
-    }
+    },
+    '/about': '/about',
+    '/contact': '/contact',
+    '/login': '/login'
   }
 })
+
+export type Pathnames = keyof typeof routing.pathnames
 
 // Lightweight wrappers around Next.js' navigation APIs
 // that will consider the routing configuration
