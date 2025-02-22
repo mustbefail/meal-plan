@@ -31,8 +31,8 @@ plan.md
 *storybook.log
 client/src/stories
 # ...
-.next
-next-env.d.ts
-dist
+client/.next
+client/next-env.d.ts
+client/dist
 
 book.md
