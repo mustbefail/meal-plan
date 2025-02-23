@@ -1,7 +1,7 @@
 import axios, { AxiosPromise } from 'axios'
 import { QueryFunctionContext } from '@tanstack/react-query'
 
-export const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL
+export const backendUrl = import.meta.env.BACKEND_URL
 
 export async function fetcher({ queryKey }: QueryFunctionContext) {
   const [url, params] = queryKey
