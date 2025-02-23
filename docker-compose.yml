@@ -6,9 +6,16 @@ services:
       args:
         - VITE_BACKEND_URL=http://localhost:3000/api/v1
     ports:
-      - "3001:80"
+      - "3001:5173"
+    volumes:
+      - ./client:/app:delegated
+      - /app/node_modules
     depends_on:
       - backend
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
 
   backend:
     build:
@@ -18,21 +25,13 @@ services:
       - "3000:3000"
     env_file:
       - ./server/.env
-    depends_on:
-      - mongodb
     environment:
       - PORT=3000
-      - DATABASE_URL=mongodb://mongodb:27017/meal-plan
-
-  mongodb:
-    image: mongo:latest
-    command: mongod --quiet --logpath /dev/null
-    ports:
-      - "27017:27017"
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
     volumes:
-      - mongodb_data:/data/db
-    environment:
-      - MONGO_INITDB_DATABASE=meal-plan
-
-volumes:
-  mongodb_data:
+      - type: bind
+        source: ./server
+        target: /app
+        consistency: cached
+      - /app/node_modules
