@@ -1,7 +1,8 @@
 {
   "watch": [
-    "./src",
-    ".env",
-    "pnpm-lock.yaml"
-  ]
+    "src"
+  ],
+  "ext": ".ts,.js",
+  "ignore": [],
+  "exec": "ts-node ./src/index.ts"
 }

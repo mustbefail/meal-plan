@@ -1,12 +1,14 @@
 import js from '@eslint/js'
 import globals from 'globals'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
+import * as tseslint from 'typescript-eslint'
 
 export default [
   { ignores: ['dist', ''] },
   prettierRecommended,
+  ...tseslint.configs.recommended,
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['**/*.{js, ts}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: {
